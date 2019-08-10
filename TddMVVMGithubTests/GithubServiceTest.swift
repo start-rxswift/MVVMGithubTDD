@@ -15,7 +15,7 @@ import RxTest
 class GithubServiceTest: XCTestCase {
 
     var service: GithubService!
-    var requests: StubRequests!
+    var requests: MockNetworkRequestProtocol!
     var scheduler: TestScheduler!
     var disposeBag: DisposeBag!
 
@@ -23,11 +23,12 @@ class GithubServiceTest: XCTestCase {
         super.setUp()
         disposeBag = DisposeBag()
         scheduler = TestScheduler(initialClock: 0, simulateProcessingDelay: false)
-        requests = StubRequests()
+        requests = MockNetworkRequestProtocol()
         service = GithubService(requests: requests, creator: URLRequestMaker(), scheduler: TestRxScheduler(scheduler))
     }
 
     func testSampleSuccess() {
+        requests.setMocking(data: Fixture.Repositories.sampleData)
         let response = scheduler.createObserver(SearchRepositories.self)
         service.search(sortOption: SortOptions(query: "", sort: "", order: "")).asObservable().subscribe(response).disposed(by: disposeBag)
         scheduler.start()
@@ -38,11 +39,15 @@ class GithubServiceTest: XCTestCase {
                 .completed(0)
             ])
     }
-}
-
-
-extension SearchRepositories: Equatable {
-    public static func == (lhs: SearchRepositories, rhs: SearchRepositories) -> Bool {
-        return lhs.total_count == rhs.total_count && lhs.items == rhs.items
+    func testSampleFailture() {
+        requests.setMocking(error: RequestsError.failDecoding)
+        let response = scheduler.createObserver(SearchRepositories.self)
+        service.search(sortOption: SortOptions(query: "", sort: "", order: "")).asObservable().subscribe(response).disposed(by: disposeBag)
+        scheduler.start()
+        // then
+        
+        XCTAssertEqual(response.events, [
+            .error(0, RequestsError.failDecoding)
+            ])
     }
 }

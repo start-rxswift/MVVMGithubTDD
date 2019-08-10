@@ -10,10 +10,6 @@ import Foundation
 import RxSwift
 
 // https://github.com/ReactiveX/RxSwift/blob/master/RxCocoa/Foundation/URLSession%2BRx.swift
-protocol NetworkRequestProtocol {
-    func request(with: URLRequest) -> Single<Data>
-}
-
 class Requests: NetworkRequestProtocol {
 
     static let shared = Requests()
