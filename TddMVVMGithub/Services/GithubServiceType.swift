@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol GithubServiceType {
+    func search(query: String, sort: String, order: String)
+}

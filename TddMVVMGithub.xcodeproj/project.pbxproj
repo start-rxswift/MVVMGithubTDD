@@ -16,6 +16,14 @@
 		BD6289E622FE424B00109397 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD6289E422FE424B00109397 /* LaunchScreen.storyboard */; };
 		BD6289F122FE424B00109397 /* TddMVVMGithubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6289F022FE424B00109397 /* TddMVVMGithubTests.swift */; };
 		BD628A0422FE440C00109397 /* GithubServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD628A0322FE440C00109397 /* GithubServiceType.swift */; };
+		BD922B5C22FE467000DE26C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BD922B5B22FE467000DE26C1 /* README.md */; };
+		BD922B5F22FE469A00DE26C1 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = BD922B5E22FE469900DE26C1 /* sample.json */; };
+		BD922B6122FE46BE00DE26C1 /* ResourcesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD922B6022FE46BE00DE26C1 /* ResourcesLoader.swift */; };
+		BD922B6322FE470100DE26C1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD922B6222FE470100DE26C1 /* main.swift */; };
+		BD922B6522FE471500DE26C1 /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD922B6422FE471500DE26C1 /* TestAppDelegate.swift */; };
+		BD922B6822FE474500DE26C1 /* RxSchedulerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD922B6722FE474500DE26C1 /* RxSchedulerType.swift */; };
+		BD922B6A22FE478200DE26C1 /* TestRxScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD922B6922FE478200DE26C1 /* TestRxScheduler.swift */; };
+		BD922B6C22FE47F000DE26C1 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD922B6B22FE47F000DE26C1 /* GeneratedMocks.swift */; };
 		FA9FDA3CBC4F13705DE74BAB /* Pods_TddMVVMGithub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE10C235F80F1B756386B1E /* Pods_TddMVVMGithub.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +56,14 @@
 		BD6289F022FE424B00109397 /* TddMVVMGithubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TddMVVMGithubTests.swift; sourceTree = "<group>"; };
 		BD6289F222FE424B00109397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD628A0322FE440C00109397 /* GithubServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubServiceType.swift; sourceTree = "<group>"; };
+		BD922B5B22FE467000DE26C1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BD922B5E22FE469900DE26C1 /* sample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
+		BD922B6022FE46BE00DE26C1 /* ResourcesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesLoader.swift; sourceTree = "<group>"; };
+		BD922B6222FE470100DE26C1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		BD922B6422FE471500DE26C1 /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
+		BD922B6722FE474500DE26C1 /* RxSchedulerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSchedulerType.swift; sourceTree = "<group>"; };
+		BD922B6922FE478200DE26C1 /* TestRxScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRxScheduler.swift; sourceTree = "<group>"; };
+		BD922B6B22FE47F000DE26C1 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +109,7 @@
 		BD6289CC22FE424900109397 = {
 			isa = PBXGroup;
 			children = (
+				BD922B5B22FE467000DE26C1 /* README.md */,
 				BD6289D722FE424900109397 /* TddMVVMGithub */,
 				BD6289EF22FE424B00109397 /* TddMVVMGithubTests */,
 				BD6289D622FE424900109397 /* Products */,
@@ -113,6 +130,7 @@
 		BD6289D722FE424900109397 /* TddMVVMGithub */ = {
 			isa = PBXGroup;
 			children = (
+				BD922B6622FE472C00DE26C1 /* Utils */,
 				BD628A0022FE43C900109397 /* Services */,
 				BD6289D822FE424900109397 /* AppDelegate.swift */,
 				BD6289DA22FE424900109397 /* ViewController.swift */,
@@ -121,6 +139,7 @@
 				BD6289E422FE424B00109397 /* LaunchScreen.storyboard */,
 				BD6289E722FE424B00109397 /* Info.plist */,
 				BD6289DF22FE424900109397 /* TddMVVMGithub.xcdatamodeld */,
+				BD922B6222FE470100DE26C1 /* main.swift */,
 			);
 			path = TddMVVMGithub;
 			sourceTree = "<group>";
@@ -128,8 +147,12 @@
 		BD6289EF22FE424B00109397 /* TddMVVMGithubTests */ = {
 			isa = PBXGroup;
 			children = (
+				BD922B6B22FE47F000DE26C1 /* GeneratedMocks.swift */,
+				BD922B5D22FE468D00DE26C1 /* Fixture */,
 				BD6289F022FE424B00109397 /* TddMVVMGithubTests.swift */,
 				BD6289F222FE424B00109397 /* Info.plist */,
+				BD922B6422FE471500DE26C1 /* TestAppDelegate.swift */,
+				BD922B6922FE478200DE26C1 /* TestRxScheduler.swift */,
 			);
 			path = TddMVVMGithubTests;
 			sourceTree = "<group>";
@@ -140,6 +163,23 @@
 				BD628A0322FE440C00109397 /* GithubServiceType.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		BD922B5D22FE468D00DE26C1 /* Fixture */ = {
+			isa = PBXGroup;
+			children = (
+				BD922B5E22FE469900DE26C1 /* sample.json */,
+				BD922B6022FE46BE00DE26C1 /* ResourcesLoader.swift */,
+			);
+			path = Fixture;
+			sourceTree = "<group>";
+		};
+		BD922B6622FE472C00DE26C1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BD922B6722FE474500DE26C1 /* RxSchedulerType.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +272,7 @@
 			files = (
 				BD6289E622FE424B00109397 /* LaunchScreen.storyboard in Resources */,
 				BD6289E322FE424B00109397 /* Assets.xcassets in Resources */,
+				BD922B5C22FE467000DE26C1 /* README.md in Resources */,
 				BD6289DE22FE424900109397 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD922B5F22FE469A00DE26C1 /* sample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +454,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD628A0422FE440C00109397 /* GithubServiceType.swift in Sources */,
+				BD922B6322FE470100DE26C1 /* main.swift in Sources */,
 				BD6289E122FE424900109397 /* TddMVVMGithub.xcdatamodeld in Sources */,
+				BD922B6822FE474500DE26C1 /* RxSchedulerType.swift in Sources */,
 				BD6289DB22FE424900109397 /* ViewController.swift in Sources */,
 				BD6289D922FE424900109397 /* AppDelegate.swift in Sources */,
 			);
@@ -422,7 +466,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD922B6122FE46BE00DE26C1 /* ResourcesLoader.swift in Sources */,
+				BD922B6A22FE478200DE26C1 /* TestRxScheduler.swift in Sources */,
 				BD6289F122FE424B00109397 /* TddMVVMGithubTests.swift in Sources */,
+				BD922B6522FE471500DE26C1 /* TestAppDelegate.swift in Sources */,
+				BD922B6C22FE47F000DE26C1 /* GeneratedMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
