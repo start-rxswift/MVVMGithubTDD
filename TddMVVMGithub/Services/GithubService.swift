@@ -12,23 +12,33 @@ import RxSwift
 class GithubService: GithubServiceType {
     static let BASE_URL = "https://api.github.com/"
     let timeoutInterval = 5.0
-    private  let requests: NetworkRequestProtocol
-    private let requestCreator: URLRequestCreator
-    
-    init(requests: NetworkRequestProtocol, creator: URLRequestCreator) {
+    private let requests: NetworkRequestProtocol
+    private let requestMaker: URLRequestMaker
+    private let scheduler: RxSchedulerType
+
+    init(
+        requests: NetworkRequestProtocol,
+        creator: URLRequestMaker,
+        scheduler: RxSchedulerType
+    ) {
         self.requests = requests
-        self.requestCreator = creator
+        self.requestMaker = creator
+        self.scheduler = scheduler
     }
 
-    func search(query: String, sort: String, order: String) -> Single<SearchRepositories> {
+    func search(sortOption: SortOptions) -> Single<SearchRepositories> {
         let path = "/search/repositories"
-        let urlRequest: URLRequest
-        do {
-            urlRequest = try requestCreator.makeGetURLRequest(baseUrl: GithubService.BASE_URL, path: path)
-        } catch {
-            return Single.error(error)
-        }
-        return self.requests.request(with: urlRequest)
-            .map(SearchRepositories.self)
+        return Single
+            .deferred {
+                let urlRequest: URLRequest
+                do {
+                    urlRequest = try self.requestMaker.get(baseUrl: GithubService.BASE_URL, path: path, queryItems: sortOption.tryQueryItem())
+                } catch {
+                    return Single.error(error)
+                }
+                return self.requests.request(with: urlRequest)
+                    .map(SearchRepositories.self)
+            }
+            .subscribeOn(self.scheduler.network)
     }
 }

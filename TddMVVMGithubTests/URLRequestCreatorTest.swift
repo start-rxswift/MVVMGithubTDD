@@ -13,11 +13,11 @@ import XCTest
 class URLRequestCreatorTest: XCTestCase {
     
     func testCreateURLRequest() {
-        let result = try! URLRequestCreator().makeGetURLRequest(baseUrl: "https://test.com", path: "/rra")
+        let result = try! URLRequestMaker().get(baseUrl: "https://test.com", path: "/rra")
         XCTAssertEqual(result.url!.absoluteString, "https://test.com/rra")
     }
     func testCreateURLRequestWithQueryItems() {
-        let result = try! URLRequestCreator().makeGetURLRequest(baseUrl: "https://test.com", path: "/rra", queryItems: [URLQueryItem(name: "test", value: "tt")])
+        let result = try! URLRequestMaker().get(baseUrl: "https://test.com", path: "/rra", queryItems: [URLQueryItem(name: "test", value: "tt")])
         XCTAssertEqual(result.url!.absoluteString, "https://test.com/rra?test=tt")
     }
 }

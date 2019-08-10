@@ -7,10 +7,10 @@
 //
 
 import Foundation
-class URLRequestCreator {
+class URLRequestMaker {
     static let DEFAULT_TIMEOUT_SECOND: TimeInterval = 5.0
     
-    func makeGetURLRequest(
+    func get(
         baseUrl: String,
         path: String,
         queryItems: [URLQueryItem]? = nil,

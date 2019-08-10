@@ -10,5 +10,5 @@ import Foundation
 import RxSwift
 
 protocol GithubServiceType {
-    func search(query: String, sort: String, order: String) -> Single<SearchRepositories>
+    func search(sortOption: SortOptions) -> Single<SearchRepositories>
 }

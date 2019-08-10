@@ -16,7 +16,10 @@ protocol NetworkRequestProtocol {
 
 class Requests: NetworkRequestProtocol {
 
+    static let shared = Requests()
     private let session = URLSession.shared
+    
+    private init() { }
 
     func request(with: URLRequest) -> Single<Data> {
         return Single.create { [weak session] single in
