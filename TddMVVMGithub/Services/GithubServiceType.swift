@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol GithubServiceType {
-    func search(query: String, sort: String, order: String)
+    func search(query: String, sort: String, order: String) -> Single<SearchRepositories>
 }

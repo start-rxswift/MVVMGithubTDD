@@ -11,6 +11,10 @@ import Foundation
 
 struct Fixture {
     struct Repositories {
-        static let sample: [Repository] = ResourcesLoader.loadJson("sample")
+        static let sample: SearchRepositories = ResourcesLoader.loadJson("sample")
+        static var first: Repository {
+            return sample.items.first!
+        }
+        static let sampleData: Data = ResourcesLoader.readData("sample", ofType: "json")
     }
 }

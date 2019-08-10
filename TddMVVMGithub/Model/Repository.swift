@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Repository: Decodable {
+struct Repository: Decodable, Equatable {
     let id: UInt64
     let name: String
     let owner: Owner
@@ -22,7 +22,7 @@ struct Repository: Decodable {
     let score: Float
 }
 
-struct Owner: Decodable {
+struct Owner: Decodable, Equatable {
     let id: UInt64
     let avatar_url: String
     let url: String

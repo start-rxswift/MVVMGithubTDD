@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: TddMVVMGithub/Services/GithubServiceType.swift at 2019-08-10 01:09:12 +0000
+// MARK: - Mocks generated from file: TddMVVMGithub/Services/GithubServiceType.swift at 2019-08-10 03:18:17 +0000
 
 //
 //  GithubServiceType.swift
@@ -12,6 +12,7 @@ import Cuckoo
 @testable import TddMVVMGithub
 
 import Foundation
+import RxSwift
 
 
  class MockGithubServiceType: GithubServiceType, Cuckoo.ProtocolMock {
@@ -39,9 +40,9 @@ import Foundation
     
     
     
-     func search(query: String, sort: String, order: String)  {
+     func search(query: String, sort: String, order: String) -> Single<SearchRepositories> {
         
-    return cuckoo_manager.call("search(query: String, sort: String, order: String)",
+    return cuckoo_manager.call("search(query: String, sort: String, order: String) -> Single<SearchRepositories>",
             parameters: (query, sort, order),
             escapingParameters: (query, sort, order),
             superclassCall:
@@ -61,9 +62,9 @@ import Foundation
 	    }
 	    
 	    
-	    func search<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(query: M1, sort: M2, order: M3) -> Cuckoo.ProtocolStubNoReturnFunction<(String, String, String)> where M1.MatchedType == String, M2.MatchedType == String, M3.MatchedType == String {
+	    func search<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(query: M1, sort: M2, order: M3) -> Cuckoo.ProtocolStubFunction<(String, String, String), Single<SearchRepositories>> where M1.MatchedType == String, M2.MatchedType == String, M3.MatchedType == String {
 	        let matchers: [Cuckoo.ParameterMatcher<(String, String, String)>] = [wrap(matchable: query) { $0.0 }, wrap(matchable: sort) { $0.1 }, wrap(matchable: order) { $0.2 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockGithubServiceType.self, method: "search(query: String, sort: String, order: String)", parameterMatchers: matchers))
+	        return .init(stub: cuckoo_manager.createStub(for: MockGithubServiceType.self, method: "search(query: String, sort: String, order: String) -> Single<SearchRepositories>", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -83,9 +84,9 @@ import Foundation
 	
 	    
 	    @discardableResult
-	    func search<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(query: M1, sort: M2, order: M3) -> Cuckoo.__DoNotUse<(String, String, String), Void> where M1.MatchedType == String, M2.MatchedType == String, M3.MatchedType == String {
+	    func search<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(query: M1, sort: M2, order: M3) -> Cuckoo.__DoNotUse<(String, String, String), Single<SearchRepositories>> where M1.MatchedType == String, M2.MatchedType == String, M3.MatchedType == String {
 	        let matchers: [Cuckoo.ParameterMatcher<(String, String, String)>] = [wrap(matchable: query) { $0.0 }, wrap(matchable: sort) { $0.1 }, wrap(matchable: order) { $0.2 }]
-	        return cuckoo_manager.verify("search(query: String, sort: String, order: String)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	        return cuckoo_manager.verify("search(query: String, sort: String, order: String) -> Single<SearchRepositories>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	}
@@ -97,8 +98,8 @@ import Foundation
     
 
     
-     func search(query: String, sort: String, order: String)   {
-        return DefaultValueRegistry.defaultValue(for: (Void).self)
+     func search(query: String, sort: String, order: String) -> Single<SearchRepositories>  {
+        return DefaultValueRegistry.defaultValue(for: (Single<SearchRepositories>).self)
     }
     
 }
