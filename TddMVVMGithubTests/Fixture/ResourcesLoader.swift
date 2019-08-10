@@ -22,9 +22,9 @@ class ResourcesLoader {
         }
         fatalError("can't decode \(T.self)")
     }
-    static func readData(_ resource: String) -> Data {
+    static func readData(_ resource: String, ofType ext: String) -> Data {
         let testBundle = Bundle(for: self)
-        if let path = testBundle.path(forResource: resource, ofType: "json") {
+        if let path = testBundle.path(forResource: resource, ofType: ext) {
             do {
                 return try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
             } catch {
