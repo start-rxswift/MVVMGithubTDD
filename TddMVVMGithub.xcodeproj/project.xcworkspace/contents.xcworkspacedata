@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "self:TddMVVMGithub.xcodeproj">
    </FileRef>
 </Workspace>
