@@ -19,7 +19,7 @@ class SearchViewModel: HasDisposeBag {
     let searchText = PublishRelay<String>()
     let sections = PublishRelay<[RepositorySection]>()
     let doSearch = PublishRelay<Void>()
-    var _repositories: [Repository] = []
+    private var _repositories: [Repository] = []
     
     init(of: GithubServiceType, scheduler: RxSchedulerType) {
         service = of
@@ -29,23 +29,25 @@ class SearchViewModel: HasDisposeBag {
 
         doSearch
             .observeOn(self.scheduler.main)
-            .do(
-                onNext: { [weak isLoading] _ in
+            .do(onNext: { [weak isLoading] _ in
                     assertMainThread()
                     isLoading?.accept(true)
-                },
-                afterNext: { [weak isLoading] _ in
-                    assertMainThread()
-                    isLoading?.accept(false)
                 })
+            .observeOn(self.scheduler.io)
             .withLatestFrom(shareSearchText)
             .flatMapLatest { [weak service, _repositories] text -> Single<SearchRepositories> in
                 assertBackgroundThread()
                 return (service?.search(sortOption: SearchOption(query: text)) ?? .never())
-                    .catchErrorJustReturn(SearchRepositories(total_count: Int.max, incomplete_results: false, items: _repositories))
+                    .debug("search a repositories of Github")
+                    .catchError {
+                        print("error: \($0)")
+                        return Single.just(SearchRepositories(total_count: Int.max, incomplete_results: false, items: _repositories))
+                }
             }
             .subscribe(onNext: { [weak self] result in
                 guard let self = self else { return }
+                print("subscribe: \(result)")
+                self.isLoading.accept(false)
                 self._repositories = result.items
                 let section = [RepositorySection(header: "repositories", items: result.items)]
                 self.sections.accept(section)

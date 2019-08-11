@@ -13,30 +13,32 @@ class GithubService: GithubServiceType {
     static let BASE_URL = "https://api.github.com/"
     let timeoutInterval = 5.0
     private let requests: NetworkRequestProtocol
-    private let requestMaker: URLRequestMaker
     private let scheduler: RxSchedulerType
 
     init(
         scheduler: RxSchedulerType,
-        requests: NetworkRequestProtocol,
-        creator: URLRequestMaker
+        requests: NetworkRequestProtocol
     ) {
         self.requests = requests
-        self.requestMaker = creator
         self.scheduler = scheduler
     }
 
     convenience init(scheduler: RxSchedulerType) {
-        self.init(scheduler: scheduler, requests: Requests.shared, creator: URLRequestMaker())
+        self.init(scheduler: scheduler, requests: Requests.shared)
     }
     
     func search(sortOption: SearchOption) -> Single<SearchRepositories> {
         let path = "/search/repositories"
         return Single
             .deferred {
-                let urlRequest: URLRequest
+                var urlRequest: URLRequest
                 do {
-                    urlRequest = try self.requestMaker.get(baseUrl: GithubService.BASE_URL, path: path, queryItems: sortOption.tryQueryItem())
+                    urlRequest = try URLRequestBuilder
+                        .get(baseUrl: GithubService.BASE_URL)
+                        .path(path)
+                        .queryItems(sortOption.tryQueryItem())
+                        .build()
+                    urlRequest.addValue("", forHTTPHeaderField: "User-Agent")
                 } catch {
                     return Single.error(error)
                 }

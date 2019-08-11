@@ -18,6 +18,8 @@ extension Data {
 
 extension PrimitiveSequence where Trait == SingleTrait, Element == Data {
     public func map<D: Decodable>(_ type: D.Type) -> Single<D> {
-        return self.map { try $0.decode(type) }
+        return self.map {
+            return try $0.decode(type)
+        }
     }
 }

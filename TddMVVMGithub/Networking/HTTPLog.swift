@@ -9,13 +9,13 @@
 import Foundation
 class HTTPLog {
     
-    static var ENABLE = false
+    static var enabled = false
     class func log(request: URLRequest) {
         #if !DEBUG
             return
         #endif
         
-        if !ENABLE { return }
+        if !enabled { return }
         
         let urlString = request.url?.absoluteString ?? ""
         let components = NSURLComponents(string: urlString)
@@ -30,6 +30,7 @@ class HTTPLog {
         requestLog += "\n\n"
         requestLog += "\(method) \(path)?\(query) HTTP/1.1\n"
         requestLog += "Host: \(host)\n"
+        requestLog += "Headers:\n"
         for (key, value) in request.allHTTPHeaderFields ?? [:] {
             requestLog += "\(key): \(value)\n"
         }
@@ -45,7 +46,7 @@ class HTTPLog {
         #if !DEBUG
             return
         #endif
-        if !ENABLE { return }
+        if !enabled { return }
         
         let urlString = response?.url?.absoluteString
         let components = NSURLComponents(string: urlString ?? "")
@@ -62,8 +63,9 @@ class HTTPLog {
         if let httpResponse = response as? HTTPURLResponse {
             responseLog += "HTTP \(httpResponse.statusCode) \(path)?\(query)\n"
 
+            responseLog += "\nHeaders\n\n"
             for (key, value) in httpResponse.allHeaderFields {
-                responseLog += "\(key): \(value)\n"
+                responseLog += "[\(key): \(value)]\n"
             }
         }
         if let host = components?.host {

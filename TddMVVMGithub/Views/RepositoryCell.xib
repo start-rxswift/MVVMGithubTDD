@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aT6-yS-Y61" customClass="RepositoryCell" customModule="TddMVVMGithub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="433" height="237"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="433" height="237"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RepositoryName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jT-WL-LhL">
+                        <rect key="frame" x="0.0" y="60" width="127" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="star" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyJ-IJ-YtX">
+                        <rect key="frame" x="0.0" y="130" width="30" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OwnerName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZE-ju-QF0">
+                        <rect key="frame" x="0.0" y="91" width="96" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fork" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOl-Nb-EzF">
+                        <rect key="frame" x="46" y="130" width="30" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="1ZE-ju-QF0" firstAttribute="top" secondItem="0jT-WL-LhL" secondAttribute="bottom" constant="10" id="2Pc-O5-1Uf"/>
+                <constraint firstItem="uOl-Nb-EzF" firstAttribute="centerY" secondItem="PyJ-IJ-YtX" secondAttribute="centerY" id="JWG-Zs-XIS"/>
+                <constraint firstItem="1ZE-ju-QF0" firstAttribute="leading" secondItem="0jT-WL-LhL" secondAttribute="leading" id="JgN-kz-Ali"/>
+                <constraint firstItem="uOl-Nb-EzF" firstAttribute="leading" secondItem="PyJ-IJ-YtX" secondAttribute="trailing" constant="16" id="Ka4-YW-S9o"/>
+                <constraint firstItem="PyJ-IJ-YtX" firstAttribute="leading" secondItem="sbo-g3-TsP" secondAttribute="leading" id="N95-C1-rJp"/>
+                <constraint firstItem="0jT-WL-LhL" firstAttribute="leading" secondItem="sbo-g3-TsP" secondAttribute="leading" id="aU0-ce-7Ra"/>
+                <constraint firstItem="0jT-WL-LhL" firstAttribute="top" secondItem="sbo-g3-TsP" secondAttribute="top" constant="16" id="eJM-TD-3Q6"/>
+                <constraint firstItem="PyJ-IJ-YtX" firstAttribute="top" secondItem="1ZE-ju-QF0" secondAttribute="bottom" constant="18" id="nTS-bv-3py"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="sbo-g3-TsP"/>
+            <size key="customSize" width="433" height="237"/>
+            <connections>
+                <outlet property="forkCount" destination="uOl-Nb-EzF" id="rhF-Ld-5NU"/>
+                <outlet property="ownerName" destination="1ZE-ju-QF0" id="XZe-zh-j4P"/>
+                <outlet property="repositoryName" destination="0jT-WL-LhL" id="69E-Z8-cec"/>
+                <outlet property="starCount" destination="PyJ-IJ-YtX" id="ySs-Mr-gYL"/>
+            </connections>
+            <point key="canvasLocation" x="425.36231884057975" y="168.41517857142856"/>
+        </collectionViewCell>
+    </objects>
+</document>

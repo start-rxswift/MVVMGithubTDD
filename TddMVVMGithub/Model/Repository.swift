@@ -25,6 +25,7 @@ struct Repository: Decodable, Equatable {
 
 struct Owner: Decodable, Equatable {
     let id: UInt64
+    let login: String
     let avatar_url: String
     let url: String
 }

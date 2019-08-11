@@ -38,6 +38,7 @@ class Requests: NetworkRequestProtocol {
                     single(.error(RequestsError.ResponseErrorReason.invalidHTTPStatusCode(response: httpResponse)))
                 }
             }
+            task.resume()
             return Disposables.create(with: task.cancel)
         }
     }

@@ -24,7 +24,7 @@ class GithubServiceTest: XCTestCase {
         disposeBag = DisposeBag()
         scheduler = TestScheduler(initialClock: 0, simulateProcessingDelay: false)
         requests = MockNetworkRequestProtocol()
-        service = GithubService(scheduler: TestRxScheduler(scheduler),requests: requests, creator: URLRequestMaker())
+        service = GithubService(scheduler: TestRxScheduler(scheduler),requests: requests)
     }
 
     func testSampleSuccess() {

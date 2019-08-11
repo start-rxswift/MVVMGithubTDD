@@ -12,6 +12,7 @@ enum RequestsError: Error {
 
     case failDecoding
     case failSerialization
+    
     /// Represents the error reason during networking request phase.
     ///
     /// - emptyRequest: The request is empty. Code 1001.
