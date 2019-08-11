@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: TddMVVMGithub/Networking/NetworkRequestProtocol.swift at 2019-08-11 06:28:27 +0000
+// MARK: - Mocks generated from file: TddMVVMGithub/Networking/NetworkRequestProtocol.swift at 2019-08-11 06:30:25 +0000
 
 //
 //  NetworkRequestProtocol.swift
@@ -105,7 +105,7 @@ import RxSwift
 }
 
 
-// MARK: - Mocks generated from file: TddMVVMGithub/Services/GithubServiceType.swift at 2019-08-11 06:28:27 +0000
+// MARK: - Mocks generated from file: TddMVVMGithub/Services/GithubServiceType.swift at 2019-08-11 06:30:25 +0000
 
 //
 //  GithubServiceType.swift

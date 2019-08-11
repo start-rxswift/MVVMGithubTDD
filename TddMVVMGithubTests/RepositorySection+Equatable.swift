@@ -7,9 +7,10 @@
 //
 
 import Foundation
+@testable import TddMVVMGithub
 
 extension RepositorySection: Equatable {
-    static func ==(rhs: RepositorySection, lhs: RepositorySection) -> Bool {
+    public static func ==(rhs: RepositorySection, lhs: RepositorySection) -> Bool {
         return rhs.items == lhs.items
     }
 }

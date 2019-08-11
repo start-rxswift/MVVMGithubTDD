@@ -46,6 +46,7 @@
 		BDA0F2C822FFE3B500ADC7D8 /* SearchOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA0F2C722FFE3B500ADC7D8 /* SearchOption.swift */; };
 		BDA0F2CA22FFE48500ADC7D8 /* AssertMainThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA0F2C922FFE48500ADC7D8 /* AssertMainThread.swift */; };
 		BDF0DE5922FFEBF7006CC179 /* RepositorySection+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0DE5822FFEBF7006CC179 /* RepositorySection+Equatable.swift */; };
+		BDF0DE5B22FFED47006CC179 /* RepositorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0DE5A22FFED47006CC179 /* RepositorySection.swift */; };
 		FA9FDA3CBC4F13705DE74BAB /* Pods_TddMVVMGithub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE10C235F80F1B756386B1E /* Pods_TddMVVMGithub.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		BDA0F2C722FFE3B500ADC7D8 /* SearchOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchOption.swift; sourceTree = "<group>"; };
 		BDA0F2C922FFE48500ADC7D8 /* AssertMainThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertMainThread.swift; sourceTree = "<group>"; };
 		BDF0DE5822FFEBF7006CC179 /* RepositorySection+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositorySection+Equatable.swift"; sourceTree = "<group>"; };
+		BDF0DE5A22FFED47006CC179 /* RepositorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 				BD922B7022FE486500DE26C1 /* Repository.swift */,
 				BD922B7622FE4EE500DE26C1 /* SearchRepositories.swift */,
 				BD62523822FEF62100E7B564 /* Encodable+Dict.swift */,
+				BDF0DE5A22FFED47006CC179 /* RepositorySection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				BD922B8C22FE644900DE26C1 /* Data+Decode.swift in Sources */,
 				BD62523922FEF62100E7B564 /* Encodable+Dict.swift in Sources */,
 				BD922B9222FE6C5600DE26C1 /* HasDisposeBag.swift in Sources */,
+				BDF0DE5B22FFED47006CC179 /* RepositorySection.swift in Sources */,
 				BD922B8422FE5A0000DE26C1 /* HTTPMethod.swift in Sources */,
 				BD922B8622FE5B0900DE26C1 /* URLRequestMaker.swift in Sources */,
 				BD6289DB22FE424900109397 /* GithubSearchViewController.swift in Sources */,
