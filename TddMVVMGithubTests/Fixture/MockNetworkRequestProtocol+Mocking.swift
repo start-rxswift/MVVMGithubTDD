@@ -12,6 +12,7 @@ import RxSwift
 @testable import TddMVVMGithub
 
 extension MockNetworkRequestProtocol {
+    @discardableResult
     func setMocking(data: Data? = nil, error: Error? = nil) {
         stub(self, block: { mock in
             let mockData = data ?? Fixture.Repositories.sampleData
@@ -33,7 +34,7 @@ extension MockNetworkRequestProtocol {
 
 extension MockGithubServiceType {
     @discardableResult
-    func setMocking(data: SearchRepositories? = nil, error: Error? = nil) -> Result<SearchRepositories, Error> {
+    func setMocking(data: SearchRepositories? = nil, error: Error? = nil) -> (SearchRepositories, Error?) {
         let mockData = data ?? Fixture.Repositories.sample
         stub(self, block: { mock in
             when(mock.search(sortOption: any()))
@@ -48,10 +49,6 @@ extension MockGithubServiceType {
                     }
             }
         })
-        if let error = error {
-            return Result.failure(error)
-        } else {
-            return Result.success(mockData)
-        }
+        return (mockData, error)
     }
 }

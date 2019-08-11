@@ -47,6 +47,7 @@
 		BDA0F2CA22FFE48500ADC7D8 /* AssertMainThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA0F2C922FFE48500ADC7D8 /* AssertMainThread.swift */; };
 		BDF0DE5922FFEBF7006CC179 /* RepositorySection+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0DE5822FFEBF7006CC179 /* RepositorySection+Equatable.swift */; };
 		BDF0DE5B22FFED47006CC179 /* RepositorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0DE5A22FFED47006CC179 /* RepositorySection.swift */; };
+		BDF0DE6522FFF11B006CC179 /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0DE6422FFF11B006CC179 /* TestError.swift */; };
 		FA9FDA3CBC4F13705DE74BAB /* Pods_TddMVVMGithub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE10C235F80F1B756386B1E /* Pods_TddMVVMGithub.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,7 @@
 		BDA0F2C922FFE48500ADC7D8 /* AssertMainThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertMainThread.swift; sourceTree = "<group>"; };
 		BDF0DE5822FFEBF7006CC179 /* RepositorySection+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositorySection+Equatable.swift"; sourceTree = "<group>"; };
 		BDF0DE5A22FFED47006CC179 /* RepositorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySection.swift; sourceTree = "<group>"; };
+		BDF0DE6422FFF11B006CC179 /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 				BD62524022FEFC9A00E7B564 /* SearchRepositories+Equatable.swift */,
 				BDA0F2C522FFDA3B00ADC7D8 /* SearchViewModelTest.swift */,
 				BDF0DE5822FFEBF7006CC179 /* RepositorySection+Equatable.swift */,
+				BDF0DE6422FFF11B006CC179 /* TestError.swift */,
 			);
 			path = TddMVVMGithubTests;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				BD922B8822FE5BAA00DE26C1 /* URLRequestCreatorTest.swift in Sources */,
 				BD62524122FEFC9A00E7B564 /* SearchRepositories+Equatable.swift in Sources */,
 				BD922B6522FE471500DE26C1 /* TestAppDelegate.swift in Sources */,
+				BDF0DE6522FFF11B006CC179 /* TestError.swift in Sources */,
 				BD922B7522FE4A1900DE26C1 /* Fixture.swift in Sources */,
 				BD922B6C22FE47F000DE26C1 /* GeneratedMocks.swift in Sources */,
 				BDA0F2C622FFDA3B00ADC7D8 /* SearchViewModelTest.swift in Sources */,
