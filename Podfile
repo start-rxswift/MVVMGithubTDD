@@ -11,7 +11,6 @@ target 'TddMVVMGithub' do
   pod 'RxCocoa'
   pod 'SwiftLint'
   pod 'RxDataSources'
-  pod 'Then'
   target 'TddMVVMGithubTests' do
     inherit! :search_paths
     # Pods for testing

@@ -17,15 +17,19 @@ class GithubService: GithubServiceType {
     private let scheduler: RxSchedulerType
 
     init(
+        scheduler: RxSchedulerType,
         requests: NetworkRequestProtocol,
-        creator: URLRequestMaker,
-        scheduler: RxSchedulerType
+        creator: URLRequestMaker
     ) {
         self.requests = requests
         self.requestMaker = creator
         self.scheduler = scheduler
     }
 
+    convenience init(scheduler: RxSchedulerType) {
+        self.init(scheduler: scheduler, requests: Requests.shared, creator: URLRequestMaker())
+    }
+    
     func search(sortOption: SortOptions) -> Single<SearchRepositories> {
         let path = "/search/repositories"
         return Single
