@@ -32,10 +32,10 @@ extension MockNetworkRequestProtocol {
 }
 
 extension MockGithubServiceType {
-    func setMocking(data: SearchRepositories? = nil, error: Error? = nil) {
+    @discardableResult
+    func setMocking(data: SearchRepositories? = nil, error: Error? = nil) -> Result<SearchRepositories, Error> {
+        let mockData = data ?? Fixture.Repositories.sample
         stub(self, block: { mock in
-            let mockData = data ?? Fixture.Repositories.sample
-            
             when(mock.search(sortOption: any()))
                 .then { _ in
                     Single.just(mockData)
@@ -48,5 +48,10 @@ extension MockGithubServiceType {
                     }
             }
         })
+        if let error = error {
+            return Result.failure(error)
+        } else {
+            return Result.success(mockData)
+        }
     }
 }

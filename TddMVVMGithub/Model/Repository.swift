@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxDataSources
 
 struct Repository: Decodable, Equatable {
     let id: UInt64
@@ -26,4 +27,10 @@ struct Owner: Decodable, Equatable {
     let id: UInt64
     let avatar_url: String
     let url: String
+}
+
+extension Repository: IdentifiableType {
+    var identity: UInt64 {
+        return id
+    }
 }
