@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: TddMVVMGithub/Networking/NetworkRequestProtocol.swift at 2019-08-11 05:23:20 +0000
+// MARK: - Mocks generated from file: TddMVVMGithub/Networking/NetworkRequestProtocol.swift at 2019-08-11 05:43:07 +0000
 
 //
 //  NetworkRequestProtocol.swift
@@ -105,7 +105,7 @@ import RxSwift
 }
 
 
-// MARK: - Mocks generated from file: TddMVVMGithub/Services/GithubServiceType.swift at 2019-08-11 05:23:20 +0000
+// MARK: - Mocks generated from file: TddMVVMGithub/Services/GithubServiceType.swift at 2019-08-11 05:43:07 +0000
 
 //
 //  GithubServiceType.swift
@@ -147,7 +147,7 @@ import RxSwift
     
     
     
-     func search(sortOption: SortOptions) -> Single<SearchRepositories> {
+     func search(sortOption: SearchOption) -> Single<SearchRepositories> {
         
     return cuckoo_manager.call("search(sortOption: SortOptions) -> Single<SearchRepositories>",
             parameters: (sortOption),
@@ -169,8 +169,8 @@ import RxSwift
 	    }
 	    
 	    
-	    func search<M1: Cuckoo.Matchable>(sortOption: M1) -> Cuckoo.ProtocolStubFunction<(SortOptions), Single<SearchRepositories>> where M1.MatchedType == SortOptions {
-	        let matchers: [Cuckoo.ParameterMatcher<(SortOptions)>] = [wrap(matchable: sortOption) { $0 }]
+	    func search<M1: Cuckoo.Matchable>(sortOption: M1) -> Cuckoo.ProtocolStubFunction<(SearchOption), Single<SearchRepositories>> where M1.MatchedType == SearchOption {
+	        let matchers: [Cuckoo.ParameterMatcher<(SearchOption)>] = [wrap(matchable: sortOption) { $0 }]
 	        return .init(stub: cuckoo_manager.createStub(for: MockGithubServiceType.self, method: "search(sortOption: SortOptions) -> Single<SearchRepositories>", parameterMatchers: matchers))
 	    }
 	    
@@ -191,8 +191,8 @@ import RxSwift
 	
 	    
 	    @discardableResult
-	    func search<M1: Cuckoo.Matchable>(sortOption: M1) -> Cuckoo.__DoNotUse<(SortOptions), Single<SearchRepositories>> where M1.MatchedType == SortOptions {
-	        let matchers: [Cuckoo.ParameterMatcher<(SortOptions)>] = [wrap(matchable: sortOption) { $0 }]
+	    func search<M1: Cuckoo.Matchable>(sortOption: M1) -> Cuckoo.__DoNotUse<(SearchOption), Single<SearchRepositories>> where M1.MatchedType == SearchOption {
+	        let matchers: [Cuckoo.ParameterMatcher<(SearchOption)>] = [wrap(matchable: sortOption) { $0 }]
 	        return cuckoo_manager.verify("search(sortOption: SortOptions) -> Single<SearchRepositories>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
@@ -205,7 +205,7 @@ import RxSwift
     
 
     
-     func search(sortOption: SortOptions) -> Single<SearchRepositories>  {
+     func search(sortOption: SearchOption) -> Single<SearchRepositories>  {
         return DefaultValueRegistry.defaultValue(for: (Single<SearchRepositories>).self)
     }
     

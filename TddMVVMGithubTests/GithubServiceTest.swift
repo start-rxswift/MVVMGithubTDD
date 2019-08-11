@@ -30,7 +30,7 @@ class GithubServiceTest: XCTestCase {
     func testSampleSuccess() {
         requests.setMocking(data: Fixture.Repositories.sampleData)
         let response = scheduler.createObserver(SearchRepositories.self)
-        service.search(sortOption: SortOptions(query: "", sort: "", order: "")).asObservable().subscribe(response).disposed(by: disposeBag)
+        service.search(sortOption: SearchOption(query: "", sort: "", order: "")).asObservable().subscribe(response).disposed(by: disposeBag)
         scheduler.start()
         // then
 
@@ -42,7 +42,7 @@ class GithubServiceTest: XCTestCase {
     func testSampleFailture() {
         requests.setMocking(error: RequestsError.failDecoding)
         let response = scheduler.createObserver(SearchRepositories.self)
-        service.search(sortOption: SortOptions(query: "", sort: "", order: "")).asObservable().subscribe(response).disposed(by: disposeBag)
+        service.search(sortOption: SearchOption(query: "", sort: "", order: "")).asObservable().subscribe(response).disposed(by: disposeBag)
         scheduler.start()
         // then
         

@@ -9,6 +9,6 @@
 import Foundation
 import RxSwift
 
-protocol GithubServiceType {
-    func search(sortOption: SortOptions) -> Single<SearchRepositories>
+protocol GithubServiceType: class {
+    func search(sortOption: SearchOption) -> Single<SearchRepositories>
 }

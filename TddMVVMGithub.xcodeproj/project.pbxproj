@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		70C0DAA1D8AB59DA39BC47FA /* Pods_TddMVVMGithubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6473C29726E69561458A8E51 /* Pods_TddMVVMGithubTests.framework */; };
-		BD62523722FEF5A300E7B564 /* SortOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD62523622FEF5A300E7B564 /* SortOptions.swift */; };
 		BD62523922FEF62100E7B564 /* Encodable+Dict.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD62523822FEF62100E7B564 /* Encodable+Dict.swift */; };
 		BD62523D22FEF8A400E7B564 /* NetworkRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD62523C22FEF8A400E7B564 /* NetworkRequestProtocol.swift */; };
 		BD62523F22FEF97500E7B564 /* MockNetworkRequestProtocol+Mocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD62523E22FEF97500E7B564 /* MockNetworkRequestProtocol+Mocking.swift */; };
@@ -44,6 +43,7 @@
 		BD922B9222FE6C5600DE26C1 /* HasDisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD922B9122FE6C5600DE26C1 /* HasDisposeBag.swift */; };
 		BDA0F2C422FFD93800ADC7D8 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA0F2C322FFD93800ADC7D8 /* SearchViewModel.swift */; };
 		BDA0F2C622FFDA3B00ADC7D8 /* SearchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA0F2C522FFDA3B00ADC7D8 /* SearchViewModelTest.swift */; };
+		BDA0F2C822FFE3B500ADC7D8 /* SearchOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA0F2C722FFE3B500ADC7D8 /* SearchOption.swift */; };
 		FA9FDA3CBC4F13705DE74BAB /* Pods_TddMVVMGithub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE10C235F80F1B756386B1E /* Pods_TddMVVMGithub.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +64,6 @@
 		7884A84347E7D05DF1CA3105 /* Pods-TddMVVMGithubTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TddMVVMGithubTests.debug.xcconfig"; path = "Target Support Files/Pods-TddMVVMGithubTests/Pods-TddMVVMGithubTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8FE10C235F80F1B756386B1E /* Pods_TddMVVMGithub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TddMVVMGithub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B228A6BAC4921DEC0A689D4F /* Pods-TddMVVMGithubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TddMVVMGithubTests.release.xcconfig"; path = "Target Support Files/Pods-TddMVVMGithubTests/Pods-TddMVVMGithubTests.release.xcconfig"; sourceTree = "<group>"; };
-		BD62523622FEF5A300E7B564 /* SortOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOptions.swift; sourceTree = "<group>"; };
 		BD62523822FEF62100E7B564 /* Encodable+Dict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Dict.swift"; sourceTree = "<group>"; };
 		BD62523C22FEF8A400E7B564 /* NetworkRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestProtocol.swift; sourceTree = "<group>"; };
 		BD62523E22FEF97500E7B564 /* MockNetworkRequestProtocol+Mocking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MockNetworkRequestProtocol+Mocking.swift"; sourceTree = "<group>"; };
@@ -104,6 +103,7 @@
 		BD922B9122FE6C5600DE26C1 /* HasDisposeBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasDisposeBag.swift; sourceTree = "<group>"; };
 		BDA0F2C322FFD93800ADC7D8 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		BDA0F2C522FFDA3B00ADC7D8 /* SearchViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTest.swift; sourceTree = "<group>"; };
+		BDA0F2C722FFE3B500ADC7D8 /* SearchOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchOption.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,9 +235,9 @@
 		BD922B6F22FE485800DE26C1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BDA0F2C722FFE3B500ADC7D8 /* SearchOption.swift */,
 				BD922B7022FE486500DE26C1 /* Repository.swift */,
 				BD922B7622FE4EE500DE26C1 /* SearchRepositories.swift */,
-				BD62523622FEF5A300E7B564 /* SortOptions.swift */,
 				BD62523822FEF62100E7B564 /* Encodable+Dict.swift */,
 			);
 			path = Model;
@@ -547,10 +547,10 @@
 				BD62523D22FEF8A400E7B564 /* NetworkRequestProtocol.swift in Sources */,
 				BD922B7922FE511F00DE26C1 /* GithubService.swift in Sources */,
 				BD922B6822FE474500DE26C1 /* RxSchedulerType.swift in Sources */,
+				BDA0F2C822FFE3B500ADC7D8 /* SearchOption.swift in Sources */,
 				BD922B8C22FE644900DE26C1 /* Data+Decode.swift in Sources */,
 				BD62523922FEF62100E7B564 /* Encodable+Dict.swift in Sources */,
 				BD922B9222FE6C5600DE26C1 /* HasDisposeBag.swift in Sources */,
-				BD62523722FEF5A300E7B564 /* SortOptions.swift in Sources */,
 				BD922B8422FE5A0000DE26C1 /* HTTPMethod.swift in Sources */,
 				BD922B8622FE5B0900DE26C1 /* URLRequestMaker.swift in Sources */,
 				BD6289DB22FE424900109397 /* GithubSearchViewController.swift in Sources */,

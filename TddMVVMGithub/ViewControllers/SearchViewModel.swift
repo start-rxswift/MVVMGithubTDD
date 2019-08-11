@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class SearchViewModel {
     
@@ -17,5 +19,4 @@ class SearchViewModel {
         service = of
         self.scheduler = scheduler
     }
-    
 }

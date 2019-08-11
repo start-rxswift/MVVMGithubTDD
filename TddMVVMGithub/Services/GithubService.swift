@@ -30,7 +30,7 @@ class GithubService: GithubServiceType {
         self.init(scheduler: scheduler, requests: Requests.shared, creator: URLRequestMaker())
     }
     
-    func search(sortOption: SortOptions) -> Single<SearchRepositories> {
+    func search(sortOption: SearchOption) -> Single<SearchRepositories> {
         let path = "/search/repositories"
         return Single
             .deferred {
